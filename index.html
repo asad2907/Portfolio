@@ -21,15 +21,38 @@
   </nav>
 
   <main class="content">
-    <header class="hero" id="home">
-      <p class="eyebrow">Portfolio</p>
-      <h1>Muhammed Asad K</h1>
-      <p class="subtitle">UI/UX · Visual Design · Marketing</p>
-      <div class="hero-actions">
-        <a class="button" href="work.html">View Work</a>
-        <a class="button ghost" href="contact.html">Contact</a>
+    <section class="hero-animation" aria-label="Hero animation">
+      <div class="controls">
+        <button class="control-btn" type="button" onclick="toggleAnimation()">⏸ Pause</button>
+        <button class="control-btn" type="button" onclick="resetPosition()">🔄 Reset</button>
+        <button class="control-btn" type="button" onclick="changeDirection()">↔ Direction</button>
       </div>
-    </header>
+
+      <div class="speed-indicator">
+        Speed: <span id="speedValue">120</span> px/s
+      </div>
+
+      <div class="animation-layer">
+        <canvas id="particleCanvas"></canvas>
+        <canvas id="scannerCanvas"></canvas>
+
+        <div class="card-stream" id="cardStream">
+          <div class="card-line" id="cardLine"></div>
+        </div>
+      </div>
+
+      <div class="hero-overlay">
+        <header class="hero" id="home">
+          <p class="eyebrow">Portfolio</p>
+          <h1>Muhammed Asad K</h1>
+          <p class="subtitle">UI/UX · Visual Design · Marketing</p>
+          <div class="hero-actions">
+            <a class="button" href="work.html">View Work</a>
+            <a class="button ghost" href="contact.html">Contact</a>
+          </div>
+        </header>
+      </div>
+    </section>
 
     <section class="section" id="work">
       <div class="section-heading">
@@ -96,5 +119,8 @@
       </div>
     </section>
   </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -10,7 +10,6 @@
   --bg-soft: #121212;
   --text: #f2f2f2;
   --muted: #a1a1a1;
-  --accent: #d4d4d4;
 }
 
 body {
@@ -98,6 +97,10 @@ ul {
   text-align: left;
 }
 
+.page-hero {
+  gap: 12px;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.4em;
@@ -106,12 +109,12 @@ ul {
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
   letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--muted);
 }
 
@@ -154,7 +157,7 @@ ul {
 
 .section-heading p {
   color: var(--muted);
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .grid {

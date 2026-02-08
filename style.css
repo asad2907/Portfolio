@@ -1,21 +1,38 @@
+@import url("https://fonts.cdnfonts.com/css/pp-neue-montreal");
+
+@font-face {
+  font-family: "PPSupplyMono";
+  src: url("https://assets.codepen.io/7558/PPSupplyMono-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-mono: "PPSupplyMono", monospace;
+  --font-sans: "PP Neue Montreal", sans-serif;
+  --color-bg: #000;
+  --color-bg-soft: #121212;
+  --color-text: #fff;
+  --color-text-muted: rgba(255, 255, 255, 0.8);
+  --color-text-light: rgba(255, 255, 255, 0.6);
+  --color-accent: #fff;
+  --font-size-mono: clamp(10px, 1.2vw, 12px);
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  color-scheme: dark;
-  --bg: #0a0a0a;
-  --bg-soft: #121212;
-  --text: #f2f2f2;
-  --muted: #a1a1a1;
-}
-
 body {
-  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -72,7 +89,7 @@ ul {
 
 .nav a {
   padding: 6px 0;
-  color: var(--text);
+  color: var(--color-text);
   opacity: 0.75;
   transition: opacity 0.2s ease;
 }
@@ -81,13 +98,119 @@ ul {
   opacity: 1;
 }
 
-.content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 140px 48px 120px;
+.slider-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 72px;
+}
+
+.webgl-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-number {
+  position: absolute;
+  top: 50%;
+  left: var(--spacing-md);
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  z-index: 3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.slide-total {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-md);
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  z-index: 3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.slides-navigation {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: var(--spacing-md);
+  right: var(--spacing-md);
+  display: flex;
+  gap: 0;
+  z-index: 3;
+  pointer-events: all;
+}
+
+.slide-nav-item {
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  flex: 1;
+  border: none;
+  background: none;
+}
+
+.slide-progress-line {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 8px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.slide-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-accent);
+  transition: width 0.1s ease, opacity 0.3s ease;
+  border-radius: 1px;
+}
+
+.slide-nav-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.slide-nav-item.active .slide-nav-title {
+  color: var(--color-text);
+}
+
+.help-text {
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  z-index: 3;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 12vw;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero {
@@ -95,6 +218,8 @@ ul {
   flex-direction: column;
   gap: 20px;
   text-align: left;
+  max-width: 520px;
+  pointer-events: auto;
 }
 
 .page-hero {
@@ -105,7 +230,7 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.4em;
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .hero h1 {
@@ -115,7 +240,7 @@ ul {
 
 .subtitle {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: var(--color-text-light);
 }
 
 .hero-actions {
@@ -130,7 +255,7 @@ ul {
   justify-content: center;
   padding: 12px 24px;
   border-radius: 999px;
-  background: var(--text);
+  background: var(--color-text);
   color: #0a0a0a;
   font-size: 0.9rem;
   letter-spacing: 0.06em;
@@ -140,8 +265,17 @@ ul {
 
 .button.ghost {
   background: transparent;
-  color: var(--text);
+  color: var(--color-text);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 48px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
 }
 
 .section {
@@ -156,7 +290,7 @@ ul {
 }
 
 .section-heading p {
-  color: var(--muted);
+  color: var(--color-text-muted);
   max-width: 560px;
 }
 
@@ -167,7 +301,7 @@ ul {
 }
 
 .card {
-  background: var(--bg-soft);
+  background: var(--color-bg-soft);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
   padding: 24px;
@@ -181,7 +315,7 @@ ul {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .card h3 {
@@ -189,21 +323,21 @@ ul {
 }
 
 .card p {
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .split {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 32px;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .meta {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .contact-list {
@@ -221,170 +355,79 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.7rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin-bottom: 8px;
 }
 
 .contact-list a {
   font-size: 0.95rem;
-  color: var(--text);
+  color: var(--color-text);
 }
 
-.hero-animation {
-  position: relative;
-  min-height: 70vh;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(8, 8, 8, 0.7);
+.tp-dfwv {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 1000 !important;
+  max-width: 320px !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
 }
 
-.hero-animation .controls,
-.hero-animation .speed-indicator {
-  position: absolute;
-  z-index: 3;
+.tp-dfwv .tp-btnv_b {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  font-family: var(--font-mono) !important;
+  border-radius: 4px !important;
 }
 
-.hero-animation .controls {
-  top: 24px;
-  left: 24px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+.tp-dfwv .tp-btnv_b:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
 }
 
-.hero-animation .control-btn {
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 999px;
-  color: var(--text);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
+@media (max-width: 600px) {
+  .slides-navigation {
+    bottom: var(--spacing-sm);
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+
+  .slide-nav-item {
+    padding: 0.75rem;
+  }
+
+  .help-text {
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+  }
+
+  .slide-number {
+    left: var(--spacing-sm);
+  }
+
+  .slide-total {
+    right: var(--spacing-sm);
+  }
+
+  .tp-dfwv {
+    top: 10px !important;
+    right: 10px !important;
+    max-width: 280px !important;
+  }
 }
 
-.hero-animation .speed-indicator {
-  top: 24px;
-  right: 24px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-
-.hero-animation .animation-layer {
-  position: absolute;
-  inset: 0;
+.slider-wrapper {
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
   pointer-events: none;
 }
 
-.hero-animation #particleCanvas,
-.hero-animation #scannerCanvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.hero-animation .card-stream {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 260px;
-  pointer-events: none;
-}
-
-.hero-animation .card-line {
-  display: flex;
-  gap: 60px;
-  will-change: transform;
-}
-
-.hero-animation .card-wrapper {
-  position: relative;
-  width: 400px;
-  height: 250px;
-  flex: 0 0 auto;
-}
-
-.hero-animation .card-wrapper .card {
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  overflow: hidden;
-  background: rgba(20, 20, 20, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.hero-animation .card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-animation .card-ascii {
-  clip-path: inset(0 0 0 var(--clip-left, 0%));
-}
-
-.hero-animation .card-normal {
-  clip-path: inset(0 var(--clip-right, 0%) 0 0);
-}
-
-.hero-animation .ascii-content {
-  font-family: "Roboto Mono", monospace;
-  color: rgba(255, 255, 255, 0.7);
-  white-space: pre;
-  padding: 14px;
-}
-
-.hero-animation .scan-effect {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 18px;
-  animation: scanPulse 0.6s ease-out;
-  pointer-events: none;
-}
-
-.hero-animation .hero-overlay {
-  position: relative;
-  z-index: 2;
-  padding: 120px 80px;
-  display: flex;
-  align-items: center;
-  min-height: 70vh;
-}
-
-@keyframes scanPulse {
-  0% {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.02);
-  }
-}
-
-@media (max-width: 960px) {
-  .hero-animation .hero-overlay {
-    padding: 100px 48px;
-  }
-
-  .hero-animation .card-wrapper {
-    width: 300px;
-    height: 200px;
-  }
+.slider-wrapper.loaded {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {
@@ -401,22 +444,11 @@ ul {
   }
 
   .content {
-    padding: 160px 24px 80px;
+    padding: 120px 24px 80px;
     gap: 80px;
   }
 
-  .hero-animation .controls {
-    position: static;
-    margin: 20px 24px 0;
-  }
-
-  .hero-animation .speed-indicator {
-    position: static;
-    margin: 12px 24px 0;
-    align-self: flex-start;
-  }
-
-  .hero-animation .hero-overlay {
-    padding: 60px 24px 100px;
+  .hero-overlay {
+    padding: 0 24px;
   }
 }

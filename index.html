@@ -1,199 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammed Asad K — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="bg"></div>
-  <div class="bg"></div>
-
-  <nav class="nav">
-    <div class="logo">Asad</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <h1 class="heading option1">Muhammed Asad K</h1>
-
-  <div class="color-controls">
-    <button class="color-btn active" data-scheme="1">Scheme 1</button>
-    <button class="color-btn" data-scheme="2">Scheme 2</button>
-    <button class="color-btn" data-scheme="3">Scheme 3</button>
-    <button class="color-btn" data-scheme="4">Scheme 4</button>
-    <button class="color-btn" data-scheme="5">Scheme 5</button>
-  </div>
-
-  <button class="toggle-adjuster-btn" id="toggleAdjusterBtn">Adjust Colors</button>
-
-  <div class="color-adjuster-panel" id="colorAdjusterPanel">
-    <div class="color-adjuster-header">
-      <h3 class="color-adjuster-title">Color Adjuster</h3>
-      <button class="color-adjuster-close" id="closeAdjusterBtn">×</button>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 1</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker1" data-color="1">
-        <input type="text" class="color-value-display" id="colorValue1" readonly>
-        <button class="copy-btn" data-copy="1">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 2</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker2" data-color="2">
-        <input type="text" class="color-value-display" id="colorValue2" readonly>
-        <button class="copy-btn" data-copy="2">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 3</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker3" data-color="3">
-        <input type="text" class="color-value-display" id="colorValue3" readonly>
-        <button class="copy-btn" data-copy="3">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 4</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker4" data-color="4">
-        <input type="text" class="color-value-display" id="colorValue4" readonly>
-        <button class="copy-btn" data-copy="4">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 5</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker5" data-color="5">
-        <input type="text" class="color-value-display" id="colorValue5" readonly>
-        <button class="copy-btn" data-copy="5">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 6</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker6" data-color="6">
-        <input type="text" class="color-value-display" id="colorValue6" readonly>
-        <button class="copy-btn" data-copy="6">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-adjuster-actions">
-      <button class="export-btn" id="exportAllBtn">Export All Colors</button>
-    </div>
-  </div>
-
-  <main class="content">
-    <header class="hero" id="home">
-      <p class="eyebrow">Portfolio</p>
-      <h1>Muhammed Asad K</h1>
-      <p class="subtitle">UI/UX · Visual Design · Marketing</p>
-      <div class="hero-actions">
-        <a class="button" href="work.html">View Work</a>
-        <a class="button ghost" href="contact.html">Contact</a>
-      </div>
-    </header>
-
-    <section class="section" id="work">
-      <div class="section-heading">
-        <h2>Work</h2>
-        <p>Selected UI/UX, visual, and marketing projects focused on clarity and craft.</p>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <p class="card-tag">UI/UX</p>
-          <h3>Product Dashboard</h3>
-          <p>Responsive workflow for analytics and reporting with a clean data hierarchy.</p>
-        </article>
-        <article class="card">
-          <p class="card-tag">Visual</p>
-          <h3>Brand Identity Kit</h3>
-          <p>Minimal logo system and typography palette for a modern product launch.</p>
-        </article>
-        <article class="card">
-          <p class="card-tag">Marketing</p>
-          <h3>Campaign Landing</h3>
-          <p>High-converting landing page layout with cinematic visual rhythm.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-heading">
-        <h2>About</h2>
-      </div>
-      <div class="split">
-        <p>
-          I design clean, intentional interfaces that balance storytelling with business impact.
-          My focus is on creating minimal, professional experiences that feel cinematic and calm.
-        </p>
-        <div class="meta">
-          <p>Based in India</p>
-          <p>Open to UI/UX, visual design, and marketing collaborations.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-heading">
-        <h2>Contact</h2>
-        <p>Let’s connect for collaborations or new projects.</p>
-      </div>
-      <div class="contact-list">
-        <div>
-          <span>Email</span>
-          <a href="mailto:iaesad29@gmail.com">iaesad29@gmail.com</a>
-        </div>
-        <div>
-          <span>Phone</span>
-          <a href="tel:+919562580953">+91 9562580953</a>
-        </div>
-        <div>
-          <span>Instagram</span>
-          <a href="https://www.instagram.com/muhammadasadl/" target="_blank" rel="noreferrer">@muhammadasadl</a>
-        </div>
-        <div>
-          <span>LinkedIn</span>
-          <a href="https://www.linkedin.com/in/muhammedasad29" target="_blank" rel="noreferrer">muhammedasad29</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <a href="https://madebybeings.com" target="_blank" rel="noopener noreferrer">Made By Beings</a>
-  </footer>
-  <div class="custom-cursor" id="customCursor"></div>
-
-  <script type="module" src="script.js"></script>
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index e0d634defb70f6f723a1a6d431d7dedad024fc6d..c20642005fcb74dccd79483d9e665a0a57a6c0a3 100644
+--- a/index.html
++++ b/index.html
+@@ -1,199 +1,61 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-  <meta charset="UTF-8">
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Muhammed Asad K — Portfolio</title>
+-  <link rel="preconnect" href="https://fonts.googleapis.com">
+-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+-  <link rel="stylesheet" href="style.css" />
+-</head>
+-<body>
+-  <div class="bg"></div>
+-  <div class="bg"></div>
+-
+-  <nav class="nav">
+-    <div class="logo">Asad</div>
+-    <ul>
+-      <li><a href="index.html">Home</a></li>
+-      <li><a href="work.html">Work</a></li>
+-      <li><a href="about.html">About</a></li>
+-      <li><a href="contact.html">Contact</a></li>
+-    </ul>
+-  </nav>
+-
+-  <h1 class="heading option1">Muhammed Asad K</h1>
+-
+-  <div class="color-controls">
+-    <button class="color-btn active" data-scheme="1">Scheme 1</button>
+-    <button class="color-btn" data-scheme="2">Scheme 2</button>
+-    <button class="color-btn" data-scheme="3">Scheme 3</button>
+-    <button class="color-btn" data-scheme="4">Scheme 4</button>
+-    <button class="color-btn" data-scheme="5">Scheme 5</button>
+-  </div>
+-
+-  <button class="toggle-adjuster-btn" id="toggleAdjusterBtn">Adjust Colors</button>
+-
+-  <div class="color-adjuster-panel" id="colorAdjusterPanel">
+-    <div class="color-adjuster-header">
+-      <h3 class="color-adjuster-title">Color Adjuster</h3>
+-      <button class="color-adjuster-close" id="closeAdjusterBtn">×</button>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 1</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker1" data-color="1">
+-        <input type="text" class="color-value-display" id="colorValue1" readonly>
+-        <button class="copy-btn" data-copy="1">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 2</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker2" data-color="2">
+-        <input type="text" class="color-value-display" id="colorValue2" readonly>
+-        <button class="copy-btn" data-copy="2">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 3</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker3" data-color="3">
+-        <input type="text" class="color-value-display" id="colorValue3" readonly>
+-        <button class="copy-btn" data-copy="3">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 4</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker4" data-color="4">
+-        <input type="text" class="color-value-display" id="colorValue4" readonly>
+-        <button class="copy-btn" data-copy="4">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 5</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker5" data-color="5">
+-        <input type="text" class="color-value-display" id="colorValue5" readonly>
+-        <button class="copy-btn" data-copy="5">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 6</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker6" data-color="6">
+-        <input type="text" class="color-value-display" id="colorValue6" readonly>
+-        <button class="copy-btn" data-copy="6">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-adjuster-actions">
+-      <button class="export-btn" id="exportAllBtn">Export All Colors</button>
+-    </div>
+-  </div>
+-
+-  <main class="content">
+-    <header class="hero" id="home">
+-      <p class="eyebrow">Portfolio</p>
+-      <h1>Muhammed Asad K</h1>
+-      <p class="subtitle">UI/UX · Visual Design · Marketing</p>
+-      <div class="hero-actions">
+-        <a class="button" href="work.html">View Work</a>
+-        <a class="button ghost" href="contact.html">Contact</a>
+-      </div>
+-    </header>
+-
+-    <section class="section" id="work">
+-      <div class="section-heading">
+-        <h2>Work</h2>
+-        <p>Selected UI/UX, visual, and marketing projects focused on clarity and craft.</p>
+-      </div>
+-      <div class="grid">
+-        <article class="card">
+-          <p class="card-tag">UI/UX</p>
+-          <h3>Product Dashboard</h3>
+-          <p>Responsive workflow for analytics and reporting with a clean data hierarchy.</p>
+-        </article>
+-        <article class="card">
+-          <p class="card-tag">Visual</p>
+-          <h3>Brand Identity Kit</h3>
+-          <p>Minimal logo system and typography palette for a modern product launch.</p>
+-        </article>
+-        <article class="card">
+-          <p class="card-tag">Marketing</p>
+-          <h3>Campaign Landing</h3>
+-          <p>High-converting landing page layout with cinematic visual rhythm.</p>
+-        </article>
+-      </div>
+-    </section>
+-
+-    <section class="section" id="about">
+-      <div class="section-heading">
+-        <h2>About</h2>
+-      </div>
+-      <div class="split">
+-        <p>
+-          I design clean, intentional interfaces that balance storytelling with business impact.
+-          My focus is on creating minimal, professional experiences that feel cinematic and calm.
+-        </p>
+-        <div class="meta">
+-          <p>Based in India</p>
+-          <p>Open to UI/UX, visual design, and marketing collaborations.</p>
+-        </div>
+-      </div>
+-    </section>
+-
+-    <section class="section" id="contact">
+-      <div class="section-heading">
+-        <h2>Contact</h2>
+-        <p>Let’s connect for collaborations or new projects.</p>
+-      </div>
+-      <div class="contact-list">
+-        <div>
+-          <span>Email</span>
+-          <a href="mailto:iaesad29@gmail.com">iaesad29@gmail.com</a>
+-        </div>
+-        <div>
+-          <span>Phone</span>
+-          <a href="tel:+919562580953">+91 9562580953</a>
+-        </div>
+-        <div>
+-          <span>Instagram</span>
+-          <a href="https://www.instagram.com/muhammadasadl/" target="_blank" rel="noreferrer">@muhammadasadl</a>
+-        </div>
+-        <div>
+-          <span>LinkedIn</span>
+-          <a href="https://www.linkedin.com/in/muhammedasad29" target="_blank" rel="noreferrer">muhammedasad29</a>
+-        </div>
+-      </div>
+-    </section>
+-  </main>
+-
+-  <footer class="footer">
+-    <a href="https://madebybeings.com" target="_blank" rel="noopener noreferrer">Made By Beings</a>
+-  </footer>
+-  <div class="custom-cursor" id="customCursor"></div>
+-
+-  <script type="module" src="script.js"></script>
+-</body>
+-</html>
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>Muhammed Asad | Portfolio</title>
++  <link rel="preconnect" href="https://fonts.googleapis.com">
++  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
++  <link rel="stylesheet" href="style.css">
++</head>
++<body>
++  <header class="site-header">
++    <nav class="navbar">
++      <a class="logo" href="index.html">Asad</a>
++      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">
++        <span></span><span></span><span></span>
++      </button>
++      <ul class="nav-links" id="navLinks">
++        <li><a href="index.html" data-page="index">Home</a></li>
++        <li><a href="work.html" data-page="work">Work</a></li>
++        <li><a href="about.html" data-page="about">About</a></li>
++        <li><a href="contact.html" data-page="contact">Contact</a></li>
++      </ul>
++    </nav>
++  </header>
++
++  <main class="page page-home fade-in">
++    <section class="hero">
++      <p class="eyebrow">Portfolio</p>
++      <h1>Muhammed Asad</h1>
++      <p class="title">B.Com Graduate | Marketing | Design | Video</p>
++      <p class="bio">B.Com graduate from the University of Calicut with a strong interest in marketing, business, and emerging technology. Completed a 3-month internship at Maktoob Media Private Limited, Kozhikode. Skilled in social media, graphic design, and video editing.</p>
++    </section>
++
++    <section class="skills-strip" aria-label="Skills">
++      <span>Social Media</span>
++      <span>Graphic Design</span>
++      <span>Video Editing</span>
++      <span>Tally</span>
++      <span>Google Workspace</span>
++      <span>AI Tools</span>
++    </section>
++
++    <section class="card-section">
++      <article class="experience-card">
++        <p class="card-label">Experience</p>
++        <h2>Marketing Intern</h2>
++        <p class="org">Maktoob Media Pvt. Ltd., Kozhikode</p>
++        <p class="date">Oct 2025 – Jan 2026</p>
++      </article>
++    </section>
++  </main>
++
++  <footer class="site-footer">
++    <p>© <span id="year"></span> Muhammed Asad · <a href="mailto:iaesad29@gmail.com">iaesad29@gmail.com</a></p>
++  </footer>
++
++  <script src="script.js"></script>
++</body>
++</html>
+ 
+EOF
+)

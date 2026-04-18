@@ -1,147 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Asad</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="bg"></div>
-  <div class="bg"></div>
-
-  <nav class="nav">
-    <div class="logo">Asad</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <h1 class="heading option1">About</h1>
-
-  <div class="color-controls">
-    <button class="color-btn active" data-scheme="1">Scheme 1</button>
-    <button class="color-btn" data-scheme="2">Scheme 2</button>
-    <button class="color-btn" data-scheme="3">Scheme 3</button>
-    <button class="color-btn" data-scheme="4">Scheme 4</button>
-    <button class="color-btn" data-scheme="5">Scheme 5</button>
-  </div>
-
-  <button class="toggle-adjuster-btn" id="toggleAdjusterBtn">Adjust Colors</button>
-
-  <div class="color-adjuster-panel" id="colorAdjusterPanel">
-    <div class="color-adjuster-header">
-      <h3 class="color-adjuster-title">Color Adjuster</h3>
-      <button class="color-adjuster-close" id="closeAdjusterBtn">×</button>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 1</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker1" data-color="1">
-        <input type="text" class="color-value-display" id="colorValue1" readonly>
-        <button class="copy-btn" data-copy="1">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 2</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker2" data-color="2">
-        <input type="text" class="color-value-display" id="colorValue2" readonly>
-        <button class="copy-btn" data-copy="2">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 3</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker3" data-color="3">
-        <input type="text" class="color-value-display" id="colorValue3" readonly>
-        <button class="copy-btn" data-copy="3">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 4</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker4" data-color="4">
-        <input type="text" class="color-value-display" id="colorValue4" readonly>
-        <button class="copy-btn" data-copy="4">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 5</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker5" data-color="5">
-        <input type="text" class="color-value-display" id="colorValue5" readonly>
-        <button class="copy-btn" data-copy="5">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-picker-group">
-      <div class="color-picker-label">
-        <span>Color 6</span>
-      </div>
-      <div class="color-picker-wrapper">
-        <input type="color" class="color-picker-input" id="colorPicker6" data-color="6">
-        <input type="text" class="color-value-display" id="colorValue6" readonly>
-        <button class="copy-btn" data-copy="6">Copy</button>
-      </div>
-    </div>
-
-    <div class="color-adjuster-actions">
-      <button class="export-btn" id="exportAllBtn">Export All Colors</button>
-    </div>
-  </div>
-
-  <main class="content">
-    <header class="hero page-hero">
-      <p class="eyebrow">About</p>
-      <h1>About</h1>
-      <p class="subtitle">Who I am</p>
-    </header>
-
-    <section class="section">
-      <div class="section-heading">
-        <h2>Profile</h2>
-      </div>
-      <div class="split">
-        <p>
-          I am a creative marketing intern passionate about design,
-          video editing, and digital media. I focus on clean visuals
-          and storytelling.
-        </p>
-        <div class="meta">
-          <p>UI/UX · Visual Design · Marketing</p>
-          <p>Minimal, cinematic, and user-centered experiences.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <a href="https://madebybeings.com" target="_blank" rel="noopener noreferrer">Made By Beings</a>
-  </footer>
-  <div class="custom-cursor" id="customCursor"></div>
-
-  <script type="module" src="script.js"></script>
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/about.html b/about.html
+index 12d80afdb736476764c861bb0b76fc49b684ada7..8a4bee0e511e5e3d67ed3d38c7bccc5a24e60948 100644
+--- a/about.html
++++ b/about.html
+@@ -1,147 +1,79 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-  <meta charset="UTF-8">
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>About | Asad</title>
+-  <link rel="preconnect" href="https://fonts.googleapis.com">
+-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+-  <link rel="stylesheet" href="style.css">
+-</head>
+-<body>
+-  <div class="bg"></div>
+-  <div class="bg"></div>
+-
+-  <nav class="nav">
+-    <div class="logo">Asad</div>
+-    <ul>
+-      <li><a href="index.html">Home</a></li>
+-      <li><a href="work.html">Work</a></li>
+-      <li><a href="about.html">About</a></li>
+-      <li><a href="contact.html">Contact</a></li>
+-    </ul>
+-  </nav>
+-
+-  <h1 class="heading option1">About</h1>
+-
+-  <div class="color-controls">
+-    <button class="color-btn active" data-scheme="1">Scheme 1</button>
+-    <button class="color-btn" data-scheme="2">Scheme 2</button>
+-    <button class="color-btn" data-scheme="3">Scheme 3</button>
+-    <button class="color-btn" data-scheme="4">Scheme 4</button>
+-    <button class="color-btn" data-scheme="5">Scheme 5</button>
+-  </div>
+-
+-  <button class="toggle-adjuster-btn" id="toggleAdjusterBtn">Adjust Colors</button>
+-
+-  <div class="color-adjuster-panel" id="colorAdjusterPanel">
+-    <div class="color-adjuster-header">
+-      <h3 class="color-adjuster-title">Color Adjuster</h3>
+-      <button class="color-adjuster-close" id="closeAdjusterBtn">×</button>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 1</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker1" data-color="1">
+-        <input type="text" class="color-value-display" id="colorValue1" readonly>
+-        <button class="copy-btn" data-copy="1">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 2</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker2" data-color="2">
+-        <input type="text" class="color-value-display" id="colorValue2" readonly>
+-        <button class="copy-btn" data-copy="2">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 3</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker3" data-color="3">
+-        <input type="text" class="color-value-display" id="colorValue3" readonly>
+-        <button class="copy-btn" data-copy="3">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 4</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker4" data-color="4">
+-        <input type="text" class="color-value-display" id="colorValue4" readonly>
+-        <button class="copy-btn" data-copy="4">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 5</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker5" data-color="5">
+-        <input type="text" class="color-value-display" id="colorValue5" readonly>
+-        <button class="copy-btn" data-copy="5">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-picker-group">
+-      <div class="color-picker-label">
+-        <span>Color 6</span>
+-      </div>
+-      <div class="color-picker-wrapper">
+-        <input type="color" class="color-picker-input" id="colorPicker6" data-color="6">
+-        <input type="text" class="color-value-display" id="colorValue6" readonly>
+-        <button class="copy-btn" data-copy="6">Copy</button>
+-      </div>
+-    </div>
+-
+-    <div class="color-adjuster-actions">
+-      <button class="export-btn" id="exportAllBtn">Export All Colors</button>
+-    </div>
+-  </div>
+-
+-  <main class="content">
+-    <header class="hero page-hero">
+-      <p class="eyebrow">About</p>
+-      <h1>About</h1>
+-      <p class="subtitle">Who I am</p>
+-    </header>
+-
+-    <section class="section">
+-      <div class="section-heading">
+-        <h2>Profile</h2>
+-      </div>
+-      <div class="split">
+-        <p>
+-          I am a creative marketing intern passionate about design,
+-          video editing, and digital media. I focus on clean visuals
+-          and storytelling.
+-        </p>
+-        <div class="meta">
+-          <p>UI/UX · Visual Design · Marketing</p>
+-          <p>Minimal, cinematic, and user-centered experiences.</p>
+-        </div>
+-      </div>
+-    </section>
+-  </main>
+-
+-  <footer class="footer">
+-    <a href="https://madebybeings.com" target="_blank" rel="noopener noreferrer">Made By Beings</a>
+-  </footer>
+-  <div class="custom-cursor" id="customCursor"></div>
+-
+-  <script type="module" src="script.js"></script>
+-</body>
+-</html>
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>About | Muhammed Asad</title>
++  <link rel="preconnect" href="https://fonts.googleapis.com">
++  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
++  <link rel="stylesheet" href="style.css">
++</head>
++<body>
++  <header class="site-header">
++    <nav class="navbar">
++      <a class="logo" href="index.html">Asad</a>
++      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">
++        <span></span><span></span><span></span>
++      </button>
++      <ul class="nav-links" id="navLinks">
++        <li><a href="index.html" data-page="index">Home</a></li>
++        <li><a href="work.html" data-page="work">Work</a></li>
++        <li><a href="about.html" data-page="about">About</a></li>
++        <li><a href="contact.html" data-page="contact">Contact</a></li>
++      </ul>
++    </nav>
++  </header>
++
++  <main class="page fade-in">
++    <section class="section-head">
++      <p class="eyebrow">About</p>
++      <h1>Profile</h1>
++    </section>
++
++    <section class="about-grid">
++      <article>
++        <p>B.Com graduate from the University of Calicut with a strong interest in marketing, business, and emerging technology. Completed a 3-month internship at Maktoob Media Private Limited, Kozhikode. Skilled in social media, graphic design, and video editing.</p>
++        <p class="location">Based in Kozhikode, Kerala, India.</p>
++      </article>
++
++      <aside class="details-panel">
++        <div>
++          <h2>Education</h2>
++          <ul>
++            <li>B.Com, Accounting and Finance — Islahiya College, University of Calicut (2026)</li>
++            <li>Higher Secondary, Commerce — Holy Family HSS (2021)</li>
++          </ul>
++        </div>
++
++        <div>
++          <h2>Skills</h2>
++          <ul>
++            <li>Social Media</li>
++            <li>Graphic Design</li>
++            <li>Video Editing</li>
++            <li>Tally</li>
++            <li>Google Workspace</li>
++            <li>AI Tools</li>
++          </ul>
++        </div>
++
++        <div>
++          <h2>Certifications</h2>
++          <ul>
++            <li>AI Fluency for Students — Anthropic (2026)</li>
++            <li>Tally Certified — Tally Education (2024)</li>
++            <li>Career Essentials in Generative AI — Microsoft & LinkedIn (2025)</li>
++          </ul>
++        </div>
++      </aside>
++    </section>
++  </main>
++
++  <footer class="site-footer">
++    <p>© <span id="year"></span> Muhammed Asad · <a href="mailto:iaesad29@gmail.com">iaesad29@gmail.com</a></p>
++  </footer>
++
++  <script src="script.js"></script>
++</body>
++</html>
+ 
+EOF
+)
